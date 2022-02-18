@@ -4,13 +4,13 @@ const myAge = 28
 // early years
 let earlyYears = 2
 
-earlyYears = earlyYears * 10.5
+earlyYears *= 10.5
 
 // later years
 let laterYears = myAge - 2
 
 // later years
-laterYears = laterYears * 4
+laterYears *= 4
 
 // console.log(earlyYears, laterYears)
 
