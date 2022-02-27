@@ -1,6 +1,6 @@
 function getUserChoice(userInput) {
  userInput = userInput.toLowerCase()
- if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
+ if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb') {
   return userInput
  } else {
   return userInput = `Invalid choice, ${userInput}, try again!`
@@ -20,6 +20,10 @@ function getComputerChoice() {
 }
 
 function determineWinner(userChoice, computerChoice) {
+ if (userChoice === 'bomb') {
+  return 'The user won!'
+ }
+ 
  if (userChoice === computerChoice) {
   return 'The game is a tie!'
  } 
