@@ -4,6 +4,52 @@ let overusedWords = ['really', 'very', 'basically'];
 
 let unnecessaryWords = ['extremely', 'literally', 'actually' ];
 
-let storyWords = []
+let storyWords = story.split(' ')
 
-console.log(story.length)
+console.log(storyWords.length)
+
+const betterWords = storyWords.filter(function (word) {
+ if (!unnecessaryWords.includes(word)) {
+  return word
+ }
+})
+
+console.log(betterWords)
+
+// let overusedWordCount = 0
+// for (let i = 0; i < storyWords.length; i++) {
+//  const word = storyWords[i]
+ 
+//  for (let j = 0; j < overusedWords.length; j++) {
+//   const overusedWord = overusedWords[j]
+  
+//   if (word === overusedWord) {
+//    overusedWordCount += 1
+//   }
+//  }
+// }
+
+// console.log(`You used ${overusedWordCount} overused words`)
+
+const overusedWordCount = storyWords.reduce(function (acc, word) {
+ if (overusedWords.includes(word)) {
+  acc += 1
+ }
+ 
+ return 0
+}, 0)
+
+console.log(`You used ${overusedWordCount} overused words`)
+
+let sentenceCount = 0
+for (let i = 0; i < storyWords.length; i++) {
+ const word  = storyWords[i]
+ 
+ if (word[word.length - 1] === '!' || word[word.length - 1] === '.') {
+  sentenceCount += 1
+ }
+}
+
+console.log(sentenceCount)
+
+console.log(betterWords.join(' '))
